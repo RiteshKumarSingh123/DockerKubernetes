@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: h2projectcrud
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: h2projectcrud
+
+  template:
+    metadata:
+      labels:
+        app: h2projectcrud
+
+    spec:
+      containers:
+        - name: h2projectcrud
+          image: riteshking/h2projectcrud:s1
+          ports:
+            - containerPort: 8080
